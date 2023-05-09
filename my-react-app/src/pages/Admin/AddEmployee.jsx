@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import { postProduct } from '../../api/httprequests';
+import { postEmployee } from '../../api/httprequests';
 import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
-  const[newProduct,setNewProduct] = useState({});
+  const[newEmployee,setNewEmployee] = useState({});
   const navigate = useNavigate();
 
   async function handleSubmit(e){
     e.preventDefault();
-    newProduct.id = uuidv4();
-    await postProduct(newProduct);
+    newEmployee.id = uuidv4();
+    await postEmployee(newEmployee);
     navigate('/admin/products');
   }
   function handleChange(e){
-    setNewProduct({...newProduct,[e.target.name]:e.target.value});
+    setNewEmployee({...newProduct,[e.target.name]:e.target.value});
   }
   return (
     <form onSubmit={(e)=>handleSubmit(e)}>

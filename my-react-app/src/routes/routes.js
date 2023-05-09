@@ -40,10 +40,6 @@ export const ROUTES = [
         element: <AdminRoot/>,
         children: [
             {
-                path:'',
-                element: <Dashboard/>
-            },
-            {
                 path:'employees',
                 element:<Employees/>
             },

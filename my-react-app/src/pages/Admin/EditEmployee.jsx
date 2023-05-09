@@ -5,11 +5,11 @@ import { editProductByID, getProductByID } from '../../api/httprequests';
 const EditProduct = () => {
   const{id} = useParams();
   const navigate = useNavigate();
-  const[product,setProduct] = useState([]);
+  const[employee,setNewEmployee] = useState([]);
   useEffect(()=>{
-    getProductByID(id).then(res=>{
+    getEmployeeByID(id).then(res=>{
       console.log(res);
-      setProduct(res);
+      setEmployee(res);
     })
   },[id]);
   function handleSubmit(){
